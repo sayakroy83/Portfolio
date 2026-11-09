@@ -15,10 +15,10 @@ export const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "service_23jhsdt", // 🔹 Your EmailJS Service ID
-        "template_e1kzozs", // 🔹 Your EmailJS Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // 🔹 Your EmailJS Service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // 🔹 Your EmailJS Template ID
         formRef.current,
-        { publicKey:"ybBtScmjgD05q0--e" } // 🔹 Your Public Key
+        { publicKey:import.meta.env.VITE_EMAILJS_PUBLIC_KEY } // 🔹 Your Public Key
       )
       .then(
         () => {
